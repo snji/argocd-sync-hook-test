@@ -4,6 +4,8 @@ metadata:
   generateName: post-sync-job-
   annotations:
     argocd.argoproj.io/hook: Sync
+    # 那么在资源同步成功完成后，Job 应该会被 Argo CD 自动删除
+    argocd.argoproj.io/hook-delete-policy: "HookSucceeded,HookFailed"
 spec:
   template:
     spec:
