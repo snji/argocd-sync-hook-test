@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: post-sync-job-
+  annotations:
+    argocd.argoproj.io/hook: Sync
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: my-container
+          image: busybox
+          command: [ "/bin/sh", "-c" ]
+          args: [ "while true; do date; sleep 1; done" ]
