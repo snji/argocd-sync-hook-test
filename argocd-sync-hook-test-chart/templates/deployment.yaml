@@ -17,7 +17,8 @@ spec:
       containers:
         - name: busybox
           image: busybox
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/sh","-c","sleep 60"]
+          command: ["/bin/sh", "-c","sleep 99999"]
+{{/*          lifecycle:*/}}
+{{/*            postStart:*/}}
+{{/*              exec:*/}}
+{{/*                command: ["/bin/sh","-c","sleep 60"]*/}}
